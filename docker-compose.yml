@@ -4,7 +4,10 @@ services:
   app:
     build:
       context: .
+    command: python manage.py runserver 0.0.0.0:8000
+    image: profiles-image
+    container_name: profiles-app
     ports:
       - "8000:8000"
     volumes:
-      - ./app:/app
+      - .:/app
